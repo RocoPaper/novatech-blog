@@ -1,0 +1,14 @@
+{
+  "name": "novatech-seo-blog",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A dependency-free static editorial site for practical AI and technology.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "validate": "node scripts/validate.mjs",
+    "dev": "node scripts/server.mjs",
+    "check": "npm run validate && npm run build && npm run validate"
+  },
+  "engines": { "node": ">=22" }
+}
