@@ -1,5 +1,375 @@
 [
   {
+    "title": "How to Choose a Business Password Manager: A Practical Checklist",
+    "slug": "choose-business-password-manager",
+    "description": "A practical checklist for choosing and rolling out a business password manager, covering security, recovery, access controls, migration, and staff adoption.",
+    "excerpt": "Choose a password manager that fits your team, protects the vault, supports clean offboarding, and can be rolled out without creating unsafe workarounds.",
+    "published": "2026-08-24",
+    "updated": "2026-08-24",
+    "author": "Ismael",
+    "category": "Useful tools",
+    "tags": [
+      "password managers",
+      "cybersecurity",
+      "small business",
+      "access management",
+      "business tools"
+    ],
+    "featured": false,
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "A business password manager is not merely a place to save logins. Used well, it gives each employee a practical way to create unique credentials, separates personal access from shared company access, and makes joining or leaving the team easier to control. Used badly, it can become an incomplete vault that staff avoid while important passwords remain in chat messages, spreadsheets, browser profiles, and personal notes."
+      },
+      {
+        "type": "paragraph",
+        "text": "This guide answers a specific question: how should a small business choose and roll out a password manager? It focuses on requirements, testing, recovery, administration, migration, and adoption rather than naming a single “best” product. The right choice depends on your devices, account structure, risk, and operating habits. This is practical security guidance, not a substitute for a qualified cybersecurity assessment or legal advice."
+      },
+      {
+        "type": "callout",
+        "title": "The short version",
+        "text": "Choose for the whole operating process, not the feature list: secure vault access, simple daily use, controlled sharing, reliable recovery, clear logs, fast offboarding, broad device support, and a tested export path."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Why a team needs more than saved browser passwords"
+      },
+      {
+        "type": "paragraph",
+        "text": "The immediate goal is one unique credential for every account. CISA advises businesses to use long, random, unique passwords, provide a company-wide password manager, and pair passwords with multifactor authentication.[1] A manager makes that behavior realistic because staff do not need to invent and remember a different password for every service."
+      },
+      {
+        "type": "paragraph",
+        "text": "A browser's built-in manager may be adequate for one person working inside a tightly controlled device ecosystem. A growing team usually needs additional controls: company-owned vaults, managed membership, groups, shared items, audit events, policy enforcement, recovery, and an orderly process for people who change roles or leave. The decision is therefore not simply “browser or app.” It is whether the tool supports how the business grants, reviews, and removes access."
+      },
+      {
+        "type": "paragraph",
+        "text": "Password managers do concentrate valuable information, so selection and configuration matter. The UK National Cyber Security Centre notes that managers can have vulnerabilities and are attractive targets, but concludes that their overall benefits outweigh the risks when organisations choose and use them appropriately.[3] Treat the vault as critical business infrastructure rather than another casual productivity subscription."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Map your requirements before comparing products"
+      },
+      {
+        "type": "paragraph",
+        "text": "Start with a one-page inventory. Count employees, contractors, administrators, devices, browsers, operating systems, and major software services. Identify which credentials belong to individuals, which legacy accounts are genuinely shared, and which systems already use single sign-on or passkeys. Record who currently approves access and what must happen when a person leaves."
+      },
+      {
+        "type": "paragraph",
+        "text": "This prevents buying an impressive product that fails in ordinary work. If the mobile app is awkward, field staff may keep credentials elsewhere. If Linux or a required browser is unsupported, developers may bypass the standard. If the administrator cannot see stale shared access, offboarding remains manual and uncertain. NCSC guidance specifically recommends checking current and intended platforms, browsers, autofill availability, and consistency of the user experience.[3]"
+      },
+      {
+        "type": "list",
+        "style": "check",
+        "items": [
+          "List every supported desktop and mobile operating system.",
+          "List required browsers and whether extensions are allowed by company policy.",
+          "Separate individual accounts from unavoidable shared accounts.",
+          "Identify privileged credentials, finance systems, email, cloud administration, domains, and social accounts.",
+          "Define joiner, role-change, contractor-expiry, and leaver workflows.",
+          "Decide whether company and personal vaults must be strictly separated.",
+          "Document any data-residency, contractual, regulatory, or supplier-review requirements.",
+          "Set a realistic budget including licences, setup, training, and ongoing administration."
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Evaluate the security model, not marketing labels"
+      },
+      {
+        "type": "paragraph",
+        "text": "Ask each shortlisted vendor to explain what is encrypted, where encryption and decryption occur, what information remains visible to the provider, and what an attacker could obtain from the server. Do not stop at a phrase such as “zero knowledge.” Read the architecture, independent assessments, security documentation, vulnerability disclosure policy, and incident history. Confirm how quickly clients are updated and whether administrators can enforce supported versions."
+      },
+      {
+        "type": "paragraph",
+        "text": "Recovery deserves equal attention. A design in which nobody but the user can decrypt a vault may reduce provider access, but a forgotten primary password can create an operational problem. Team recovery can improve continuity while introducing another path that needs protection. NCSC recommends understanding exactly how recovery works, who can perform it, and the trade-off between recovery capability and vault confidentiality.[3]"
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Minimum security questions for a shortlist"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Can the business require MFA for every vault user and stronger factors for administrators?",
+          "Are vault contents encrypted at rest and protected in transit, and does the documentation explain the design clearly?",
+          "Who can recover an account, what can they recover, and which events are logged?",
+          "Can administrators view employees' private credentials, or only manage membership and shared collections?",
+          "Can the tool restrict, audit, or disable plaintext export?",
+          "Does autofill offer credentials only to the matching saved domain?",
+          "Are new-device enrolment, failed unlocks, recovery, exports, and shared-item access visible in logs?",
+          "Does the vendor publish a vulnerability reporting process, security advisories, and a credible update mechanism?",
+          "Can sessions, trusted devices, and former employees be revoked promptly?",
+          "Can the manager store or coordinate passkeys as services move beyond passwords?"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "The Australian Cyber Security Centre also recommends looking for encryption, MFA for vault access, device synchronisation, exposed-password alerts, browser extensions, regular updates, and a reputable provider.[4] These are screening criteria, not proof that a product is secure. Your pilot still needs to test the exact controls your team will use."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Check business administration and sharing"
+      },
+      {
+        "type": "paragraph",
+        "text": "A business plan should let the company own work vaults even when an employee owns their account. Access should follow groups or roles where possible, not a growing series of one-off shares. Administrators need enough visibility to manage risk without silently reading every personal work credential. For shared credentials, the system should show who received access, support rapid revocation, and help rotate the password when membership changes."
+      },
+      {
+        "type": "paragraph",
+        "text": "Do not use sharing features to preserve a bad account design indefinitely. Named accounts with delegated permissions are preferable because actions can be attributed to a person and removed without changing a password for everyone. Use a shared vault when a service genuinely offers only one login, then record the account owner and a plan to replace sharing when the service supports better access control."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Area",
+          "What good looks like",
+          "Warning sign"
+        ],
+        "rows": [
+          [
+            "Ownership",
+            "Work items remain controlled by the organisation",
+            "Critical credentials live only in an employee's personal vault"
+          ],
+          [
+            "Sharing",
+            "Access is group-based, reviewable, and revocable",
+            "Passwords are copied into email or chat"
+          ],
+          [
+            "Administration",
+            "Admin roles are limited and logged",
+            "Every administrator has unrestricted power"
+          ],
+          [
+            "Offboarding",
+            "Sessions and vault membership can be removed immediately",
+            "The team relies on remembering every shared account"
+          ],
+          [
+            "Export",
+            "Export is restricted, audited, and handled by policy",
+            "Any user can create an unprotected password file"
+          ],
+          [
+            "Recovery",
+            "The method is documented and tested safely",
+            "Nobody knows what happens when an owner is unavailable"
+          ]
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Run a realistic pilot before committing"
+      },
+      {
+        "type": "paragraph",
+        "text": "Choose a small group representing different working styles: an administrator, a frequent desktop user, a mobile user, and someone who is not technically confident. Use test or low-risk accounts first. The pilot should reproduce daily work rather than demonstrate only account creation."
+      },
+      {
+        "type": "steps",
+        "items": [
+          {
+            "title": "Configure the organisation",
+            "text": "Create limited admin roles, require MFA, define vaults and groups, set session policies, and document who owns recovery. Avoid connecting every directory or production account on day one."
+          },
+          {
+            "title": "Test ordinary login",
+            "text": "Save, generate, autofill, edit, and search for credentials across every required browser and device. Check what happens on similar-looking domains and when the extension is unavailable."
+          },
+          {
+            "title": "Test collaboration",
+            "text": "Share a test credential through a group, remove one member, rotate the password, and confirm the remaining users receive the update without seeing data outside their role."
+          },
+          {
+            "title": "Test failure and recovery",
+            "text": "Use documented, non-destructive scenarios for a lost device, forgotten primary password, unavailable administrator, locked account, and vendor outage. Verify emergency contacts and approvals."
+          },
+          {
+            "title": "Test offboarding",
+            "text": "Remove a pilot user, revoke sessions and devices, inspect logs, rotate exposed shared credentials, and confirm company-owned items remain accessible to authorised staff."
+          },
+          {
+            "title": "Test exit",
+            "text": "Export a small test vault, inspect the format, protect and delete the export, and confirm the business can migrate without leaving plaintext files behind."
+          },
+          {
+            "title": "Collect friction",
+            "text": "Record failed autofill, confusing prompts, missing platforms, duplicate entries, support delays, and unsafe workarounds. Usability failures are security findings, not cosmetic complaints."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Migrate in risk order, not all at once"
+      },
+      {
+        "type": "paragraph",
+        "text": "After the pilot, create the company structure before importing credentials. Establish owners, groups, recovery contacts, MFA, and offboarding procedures. Then migrate a controlled set of high-value accounts: primary email, domain registrar, cloud administration, finance platforms, source control, and critical vendor portals. Change reused or weak passwords as each account enters the vault rather than preserving poor credentials in a better container."
+      },
+      {
+        "type": "paragraph",
+        "text": "Do not move everything into one shared collection. Give each employee an individual work vault and create shared collections around real responsibilities. Keep break-glass credentials in a separately governed emergency process with restricted access and periodic tests. If an import produces a plaintext file, handle it on a trusted device, verify the migration, and securely remove the file according to your organisation's procedure. NCSC warns that exported password files may be unprotected and recommends restricting, auditing, and governing export.[3]"
+      },
+      {
+        "type": "paragraph",
+        "text": "CISA recommends a company-wide manager because it helps staff generate, autofill, and securely store complex passwords.[1] Adoption therefore matters as much as configuration. Give employees a short live demonstration, a one-page quick-start guide, and a clear support route. Explain which vault owns work credentials, how to report suspicious behavior, and what must never be sent through chat or email."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Common mistakes to avoid"
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Choosing only by price"
+      },
+      {
+        "type": "paragraph",
+        "text": "A low licence price can be expensive if the tool lacks required devices, creates support work, or cannot remove access cleanly. Compare total operating cost and the consequences of gaps."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Protecting the vault with password alone"
+      },
+      {
+        "type": "paragraph",
+        "text": "The vault contains access to many services. Require MFA, use a strong unique primary passphrase, secure recovery, and review enrolled devices. The Australian guidance explicitly recommends MFA and a strong unique master password for the manager.[4]"
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Putting every employee in one shared vault"
+      },
+      {
+        "type": "paragraph",
+        "text": "Broad sharing defeats least privilege and complicates offboarding. Organise access around roles, keep individual credentials individual, and review group membership."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Ignoring recovery until an emergency"
+      },
+      {
+        "type": "paragraph",
+        "text": "A founder's absence, lost security key, or locked device should not halt the business. Document recovery roles and test them without weakening normal controls."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Importing old problems"
+      },
+      {
+        "type": "paragraph",
+        "text": "A vault full of duplicate, reused, ownerless credentials is not a completed migration. Prioritise important accounts, assign owners, replace weak passwords, and remove obsolete entries."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Assuming the rollout is finished"
+      },
+      {
+        "type": "paragraph",
+        "text": "Review adoption, stale users, shared access, alerts, privileged accounts, recovery contacts, updates, and bypass behavior on a regular schedule. Adjust training or configuration when the same friction repeats."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "A 30-day rollout checklist"
+      },
+      {
+        "type": "list",
+        "style": "check",
+        "items": [
+          "Week 1: inventory users, platforms, browsers, critical accounts, shared logins, and current offboarding steps.",
+          "Week 1: shortlist products against mandatory security, administration, recovery, and support requirements.",
+          "Week 2: configure a test organisation with MFA, limited administrators, groups, logs, and recovery owners.",
+          "Week 2: pilot normal login, mobile use, sharing, lost-device handling, recovery, offboarding, and export.",
+          "Week 3: resolve pilot failures and document the approved company vault structure and operating policy.",
+          "Week 3: train staff and migrate critical accounts, changing reused credentials during migration.",
+          "Week 4: remove old password files and unauthorised sharing methods after verifying safe migration.",
+          "Week 4: review enrolment, MFA coverage, shared access, unowned items, support issues, and exceptions.",
+          "Set a recurring review for access, alerts, inactive users, vendor updates, recovery contacts, and export events."
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Frequently asked questions"
+      },
+      {
+        "type": "faq",
+        "items": [
+          {
+            "question": "Is a browser password manager enough for a small business?",
+            "answer": "It may be enough for a solo operator on managed devices, but a team should check whether it provides company ownership, role-based sharing, logging, recovery, policy enforcement, and dependable offboarding. Decide from requirements rather than assuming a separate product is always necessary."
+          },
+          {
+            "question": "Should employees share passwords through the password manager?",
+            "answer": "Use named accounts and delegated permissions whenever a service supports them. When a legacy service requires one shared login, a controlled shared vault is safer than chat or email, but access should be limited, logged, reviewed, and rotated when membership changes."
+          },
+          {
+            "question": "What happens if someone forgets the primary password?",
+            "answer": "The outcome depends on the product's security and recovery design. Some vaults may be unrecoverable; business plans may support administrator-assisted or team recovery. Understand who can recover what, protect that capability, and test the documented process before relying on it."
+          },
+          {
+            "question": "Does a password manager replace MFA or passkeys?",
+            "answer": "No. Use MFA on the manager and important services, and adopt passkeys where they fit your risk and device-management model. A manager remains useful while many services still require passwords and may also help coordinate passkeys."
+          },
+          {
+            "question": "Which accounts should be migrated first?",
+            "answer": "Start with accounts whose compromise or loss would cause the greatest harm, such as primary email, domain registration, cloud administration, finance, source control, and critical vendors. Assign an owner and replace reused passwords during migration."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Conclusion: choose the operating system for credentials"
+      },
+      {
+        "type": "paragraph",
+        "text": "The best business password manager is not the one with the longest feature page. It is the one your team can use consistently while the business retains ownership, limits access, recovers safely, removes former users, reviews important events, and exits without chaos."
+      },
+      {
+        "type": "paragraph",
+        "text": "Map the real environment, convert it into mandatory requirements, evaluate the security and recovery model, and run failure-focused pilot tests. Then migrate in risk order and train people around everyday behavior. A password manager improves security only when it replaces unsafe workarounds and becomes part of a maintained access process."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Require Strong Passwords",
+        "publisher": "Cybersecurity and Infrastructure Security Agency (CISA)",
+        "url": "https://www.cisa.gov/audiences/small-and-medium-businesses/secure-your-business/require-strong-passwords"
+      },
+      {
+        "title": "NIST Special Publication 800-63B: Authentication and Authenticator Management",
+        "publisher": "National Institute of Standards and Technology (NIST)",
+        "url": "https://pages.nist.gov/800-63-4/sp800-63b.html"
+      },
+      {
+        "title": "Password Manager Buyers Guide",
+        "publisher": "UK National Cyber Security Centre (NCSC)",
+        "url": "https://www.ncsc.gov.uk/collection/passwords/password-manager-buyers-guide"
+      },
+      {
+        "title": "Password Managers",
+        "publisher": "Australian Cyber Security Centre",
+        "url": "https://www.cyber.gov.au/protect-yourself/securing-your-accounts/password-managers"
+      }
+    ]
+  },
+  {
     "title": "AI Agents for Small Businesses in Saudi Arabia: A Practical 2026 Guide",
     "slug": "ai-agents-small-business-saudi-arabia",
     "description": "A practical, security-conscious guide for Saudi small businesses deciding where AI agents fit, how to pilot them, and how to measure useful results.",
