@@ -1,5 +1,358 @@
 [
   {
+    "title": "How to Validate a SaaS Idea Before You Build It",
+    "slug": "validate-saas-idea-before-building",
+    "description": "A practical, evidence-led process to validate a SaaS idea through problem interviews, competitor research, prototypes, and real customer commitments.",
+    "excerpt": "Test the customer, problem, buying process, and willingness to act before investing months in software that may solve the wrong problem.",
+    "published": "2026-08-25",
+    "updated": "2026-08-25",
+    "author": "Ismael",
+    "category": "Tech business",
+    "tags": [
+      "SaaS validation",
+      "customer discovery",
+      "startup ideas",
+      "MVP",
+      "tech business"
+    ],
+    "featured": false,
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "A polished SaaS product can still fail at the most basic test: a specific group of customers does not care enough about the problem to change what it does today. Validation reduces that risk before you spend months on authentication, dashboards, billing, integrations, and infrastructure. It does not guarantee success. It helps you replace assumptions with progressively stronger evidence."
+      },
+      {
+        "type": "paragraph",
+        "text": "This guide answers a practical question: how can you validate a SaaS idea before building the full product? The process begins with a narrow customer and problem, studies current alternatives, uses interviews to understand real behavior, and then asks potential buyers to take a meaningful action. It is designed for a solo founder or small team with limited time and budget."
+      },
+      {
+        "type": "callout",
+        "title": "The validation principle",
+        "text": "Do not ask whether people like your idea. Collect evidence that the problem exists, occurs often enough, has consequences, belongs to a reachable buyer, and motivates action stronger than a compliment."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "What SaaS idea validation actually means"
+      },
+      {
+        "type": "paragraph",
+        "text": "Validation is a structured attempt to disprove the risky parts of a business idea cheaply. A SaaS concept usually rests on several separate assumptions: the target customer is identifiable; the problem is real and important; existing alternatives are inadequate; the buyer can approve a purchase; you can reach that buyer; and a workable solution can be delivered at a sustainable cost. One successful conversation does not validate all of them."
+      },
+      {
+        "type": "paragraph",
+        "text": "Market research and competitive analysis provide an initial map. The U.S. Small Business Administration describes market research as a way to find customers and competitive analysis as a way to make a business distinct.[1] That desk research is useful for defining whom to interview and what alternatives to examine, but it cannot tell you how a particular team handles the problem on an ordinary Tuesday. Direct customer evidence must follow."
+      },
+      {
+        "type": "paragraph",
+        "text": "Treat validation as a ladder. Search data, market reports, and competitor pages are context. Interviews reveal workflows, language, and motivations. A prototype shows whether people understand a proposed experience. A request for a pilot, deposit, signed letter of intent, scheduled onboarding, or access to sample data tests whether interest survives a real cost. The appropriate commitment depends on the product and buyer, but behavior is generally stronger evidence than stated enthusiasm."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Write the idea as testable assumptions"
+      },
+      {
+        "type": "paragraph",
+        "text": "Replace a broad pitch such as “AI reporting for small businesses” with a falsifiable statement. For example: “Independent accounting firms with five to twenty employees spend at least three staff-hours each week turning client data into monthly management summaries, and a partner can approve a paid pilot for a tool that reduces drafting time while keeping review mandatory.” Every part can be investigated."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Assumption",
+          "Question to answer",
+          "Early evidence"
+        ],
+        "rows": [
+          [
+            "Customer",
+            "Can you identify and reach one narrow group?",
+            "Relevant people accept discovery calls"
+          ],
+          [
+            "Problem",
+            "Does the issue happen in real workflows?",
+            "Recent examples with visible consequences"
+          ],
+          [
+            "Priority",
+            "Does it compete successfully for attention and budget?",
+            "The customer has tried to solve it already"
+          ],
+          [
+            "Buyer",
+            "Who approves, influences, uses, and blocks the purchase?",
+            "A clear buying path and named decision owner"
+          ],
+          [
+            "Solution",
+            "Can a narrow approach produce the desired outcome?",
+            "Users complete a realistic prototype or concierge test"
+          ],
+          [
+            "Commitment",
+            "Will a qualified prospect incur a real cost to continue?",
+            "Time, data, access, pilot agreement, deposit, or payment"
+          ]
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Rank assumptions by how fatal and uncertain they are. If the target buyer has no authority or the problem is rare, elegant technology cannot rescue the concept. Test those risks before visual design or architecture. Record in advance what result would make you continue, change direction, or stop; otherwise it is easy to reinterpret every response as encouragement."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Research the market without confusing it with demand"
+      },
+      {
+        "type": "paragraph",
+        "text": "Build a simple competitor and alternative map. Include direct software competitors, spreadsheets, agencies, internal staff, generic tools, and the option of doing nothing. For each, note the customer served, promised outcome, workflow, public pricing when available, integrations, distribution channel, and recurring complaints visible in credible reviews or community discussions. Verify important details on the provider's own documentation."
+      },
+      {
+        "type": "paragraph",
+        "text": "Competition is not automatically bad. Existing spending can indicate that customers recognize the problem. The more useful question is why a defined segment would switch. “Simpler,” “AI-powered,” and “all in one” are not sufficient answers. A defensible entry point might be a neglected workflow, language requirement, difficult integration, shorter implementation, clearer compliance process, or service model that solves a narrow job better."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Run problem interviews that uncover behavior"
+      },
+      {
+        "type": "paragraph",
+        "text": "Recruit people who closely match the target role, company type, and operating context. Friends can help you practise, but their politeness and distance from the problem can distort results. Y Combinator's guidance recommends speaking with users throughout the company journey and warns that introducing the idea too early can bias answers.[2] Begin with the person's current work, not your solution."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Tell me about the last time you had to complete this task.",
+          "What triggered the work, and who was involved?",
+          "Which tools, files, messages, or handoffs did you use?",
+          "What was the hardest or slowest part, and why?",
+          "What happened when the process went wrong or finished late?",
+          "How often has this occurred in the last month or quarter?",
+          "What have you already tried, and what did it cost in time or money?",
+          "Who owns the problem, and who would approve a different approach?",
+          "What other priority would compete with fixing this?"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Ask for specific recent examples and follow the sequence step by step. YC suggests questions such as how the person does the task today, what is hardest, why it is hard, how often it happens, why it matters, and what they currently do to solve it.[2] Avoid “Would you use this?” and “How much would you pay?” in the early problem discussion. Hypothetical answers are easy to give and carry no cost."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Test the solution before writing the software"
+      },
+      {
+        "type": "paragraph",
+        "text": "Once interviews show a recurring, important problem, test the smallest representation of the outcome. That may be a clickable prototype, spreadsheet, manual service, sample report, short demonstration, or landing page tied to direct outreach. The goal is not to pretend the product exists. State clearly what is manual or unfinished and learn whether the proposed workflow solves the right job."
+      },
+      {
+        "type": "paragraph",
+        "text": "Use realistic inputs and ask the participant to complete a task rather than watch a presentation. Observe where the person hesitates, which information is missing, whether the output fits the next step, and what security or integration concerns block progress. Do not explain every screen. Confusion that requires the founder's narration is part of the result."
+      },
+      {
+        "type": "paragraph",
+        "text": "Strategyzer distinguishes what customers say from what they do. Its testing guidance recommends asking about facts and past experiences rather than hypothetical intentions, then double-checking critical assumptions through customer action.[3] A sensible sequence is therefore interview, prototype task, and meaningful commitment—not a large build after a survey full of positive opinions."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Choose an ethical commitment test"
+      },
+      {
+        "type": "paragraph",
+        "text": "Ask for the next action that would genuinely be required if the prospect intended to proceed. For a business product, that could mean introducing the budget owner, sharing an anonymized sample, scheduling a technical review, agreeing to a defined pilot, or paying a refundable deposit under clear terms. For a low-cost self-serve tool, it may be joining a limited trial and completing setup. Never fabricate scarcity, customers, capabilities, or launch dates to create urgency."
+      },
+      {
+        "type": "paragraph",
+        "text": "Define the offer precisely: target outcome, scope, duration, responsibilities, data handling, support, price or deposit, and success criteria. A free pilot may test usability but can produce weak pricing evidence because participation costs less. A paid pilot is stronger commercial evidence, yet a refusal does not always mean the problem is absent; procurement, timing, trust, or implementation effort may be the blocker. Record the reason and test it separately."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "A practical 14-day validation sprint"
+      },
+      {
+        "type": "steps",
+        "items": [
+          {
+            "title": "Days 1–2: define the riskiest case",
+            "text": "Choose one customer segment, one recurring job, one buyer, and one desired outcome. Write the major assumptions and stop conditions."
+          },
+          {
+            "title": "Days 2–3: map alternatives",
+            "text": "Review direct competitors and manual workarounds. Identify switching reasons, buying friction, and claims that require customer verification."
+          },
+          {
+            "title": "Days 3–5: recruit deliberately",
+            "text": "Contact people who match the segment through professional networks, communities, events, introductions, or focused outreach. Ask only for a short research conversation."
+          },
+          {
+            "title": "Days 5–8: conduct problem interviews",
+            "text": "Explore recent behavior without pitching. Update the assumptions after each call, but do not declare a pattern from one unusually enthusiastic person."
+          },
+          {
+            "title": "Days 8–10: create the smallest test",
+            "text": "Build a prototype or manual delivery that demonstrates the core outcome using realistic, safely handled sample information."
+          },
+          {
+            "title": "Days 10–12: run solution sessions",
+            "text": "Let qualified participants attempt a task. Record completion, confusion, objections, missing workflow steps, and willingness to continue."
+          },
+          {
+            "title": "Days 12–14: request commitment",
+            "text": "Present a transparent pilot or next step with scope, responsibilities, timing, and price. Compare actual actions with your prewritten decision criteria."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Fourteen days is a working cadence, not a universal proof threshold. A regulated enterprise sale may require much longer, while a simple consumer utility can be tested faster. The sprint is successful when it produces a clearer decision: proceed to a narrow MVP, revise the customer or problem, run another targeted experiment, or stop."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "How to decide whether the evidence is strong enough"
+      },
+      {
+        "type": "paragraph",
+        "text": "Review evidence by quality, relevance, and consistency rather than chasing a universal interview count. Ten conversations with unrelated people are weaker than repeated recent examples from a tightly defined segment. Positive words are weaker than an introduction to the decision-maker. An email signup is weaker than completed onboarding. A paid pilot is stronger than all three, but still tests only a limited context."
+      },
+      {
+        "type": "list",
+        "style": "check",
+        "items": [
+          "The same important problem appears in multiple qualified customers' recent behavior.",
+          "Customers already spend time, money, attention, or reputation managing the problem.",
+          "You understand the user, buyer, approver, and likely blockers.",
+          "A narrow solution test produces the intended outcome with realistic inputs.",
+          "Prospects take agreed next steps without repeated founder pressure.",
+          "At least some qualified buyers accept a credible price or paid-pilot conversation.",
+          "You can describe a reachable acquisition path, not only a theoretical market.",
+          "Known delivery, security, integration, support, and regulatory risks fit your resources.",
+          "The evidence meets decision criteria written before the experiment."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "A “no” is useful when it identifies a false assumption before expensive development. If urgency is weak, narrow or change the problem. If the user cares but the buyer does not, investigate the economic case and approval path. If customers commit but manual delivery fails, the risk has moved from demand to feasibility. Do not hide different failure modes inside a single verdict."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Common validation mistakes"
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Pitching during discovery"
+      },
+      {
+        "type": "paragraph",
+        "text": "A persuasive founder can create enthusiasm that disappears after the call. Spend the problem interview learning how work happens today. Introduce a solution only in a separate test or at the end when the distinction is clear."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Interviewing anyone who will respond"
+      },
+      {
+        "type": "paragraph",
+        "text": "Feedback from people outside the target role can improve wording while damaging the business conclusion. Define qualification criteria before recruitment and label each participant accurately."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Counting compliments as evidence"
+      },
+      {
+        "type": "paragraph",
+        "text": "“Great idea” is socially easy. Ask for a next step that costs appropriate time, access, reputation, or money. Make the request transparent and accept refusal without pressuring the participant."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Building a broad MVP"
+      },
+      {
+        "type": "paragraph",
+        "text": "An MVP should test the riskiest value path, not reproduce a mature competitor badly. Use manual work behind the scenes where ethical and secure, and write only the software needed to learn what the manual test cannot answer."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Changing the success criteria afterward"
+      },
+      {
+        "type": "paragraph",
+        "text": "If nobody accepts a paid pilot, replacing the original threshold with page views preserves the idea rather than tests it. Keep the result, explain the failure, and design the next experiment around the newly identified risk."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Frequently asked questions"
+      },
+      {
+        "type": "faq",
+        "items": [
+          {
+            "question": "How many customer interviews are enough to validate a SaaS idea?",
+            "answer": "There is no universal number. Continue until qualified interviews reveal a consistent pattern and additional conversations add little new information, then test that pattern with behavior. Relevance and evidence quality matter more than a round total."
+          },
+          {
+            "question": "Should I build an MVP before talking to customers?",
+            "answer": "Usually, start with problem interviews and market research. When the problem is credible, create the smallest prototype or manual test needed to explore the solution. Build software when it answers an unresolved risk that cheaper methods cannot."
+          },
+          {
+            "question": "Does a waitlist prove demand?",
+            "answer": "A relevant waitlist is an early signal, not proof of purchase or sustained use. Strengthen it by measuring who joins, whether they complete qualification and onboarding steps, and whether suitable prospects accept a transparent paid offer."
+          },
+          {
+            "question": "Can I validate a SaaS idea without taking payment?",
+            "answer": "Yes, but be precise about what you learned. Interviews can validate problem details, and prototypes can test comprehension or workflow. A deposit, paid pilot, or purchase tests commercial commitment more directly, so pricing risk remains open until buyers face a real offer."
+          },
+          {
+            "question": "What should I do if interviews produce conflicting feedback?",
+            "answer": "Check whether participants truly belong to the same segment, use the product in the same context, and have similar authority. Split the segment when necessary, return to recent behavior, and run separate tests rather than averaging incompatible needs."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Conclusion: earn the right to build"
+      },
+      {
+        "type": "paragraph",
+        "text": "Validating a SaaS idea is not a search for permission. It is a disciplined way to discover where your reasoning is weak while change is still cheap. Define one customer and problem, map the alternatives, interview for recent behavior, test a narrow outcome, and ask for an honest commitment."
+      },
+      {
+        "type": "paragraph",
+        "text": "Then make the decision the evidence supports. Build a focused MVP when the problem, buyer, workflow, and next action are credible. Run another experiment when one critical uncertainty remains. Change direction or stop when the core assumptions fail. Saving months of unnecessary development is a productive result—and a better foundation for the next idea."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Market research and competitive analysis",
+        "publisher": "U.S. Small Business Administration",
+        "url": "https://www.sba.gov/business-guide/plan-your-business/market-research-competitive-analysis"
+      },
+      {
+        "title": "How to talk to users",
+        "publisher": "Y Combinator",
+        "url": "https://www.ycombinator.com/library/Iq-how-to-talk-to-users"
+      },
+      {
+        "title": "Ways to test your value proposition and business model",
+        "publisher": "Strategyzer",
+        "url": "https://strategyzer.com/library/ways-to-test-your-value-proposition-and-business-model"
+      }
+    ]
+  },
+  {
     "title": "How to Choose a Business Password Manager: A Practical Checklist",
     "slug": "choose-business-password-manager",
     "description": "A practical checklist for choosing and rolling out a business password manager, covering security, recovery, access controls, migration, and staff adoption.",
