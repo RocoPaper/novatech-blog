@@ -1,5 +1,372 @@
 [
   {
+    "title": "How to Build a Reliable AI Knowledge Base with RAG",
+    "slug": "build-reliable-ai-knowledge-base-rag",
+    "description": "Learn how to build and evaluate a reliable RAG knowledge base that answers from company documents, cites sources, respects access, and handles uncertainty.",
+    "excerpt": "Turn company documents into a useful AI knowledge base by controlling content, retrieval, citations, permissions, evaluation, and safe fallback behavior.",
+    "published": "2026-08-27",
+    "updated": "2026-08-27",
+    "author": "Ismael",
+    "category": "Practical AI",
+    "tags": [
+      "retrieval-augmented generation",
+      "AI knowledge base",
+      "RAG evaluation",
+      "internal chatbot",
+      "document search"
+    ],
+    "featured": false,
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "An internal AI assistant can sound convincing while giving an answer from an obsolete policy, retrieving a document the user should not see, or filling a gap with plausible language. Connecting a language model to a folder of files is therefore not the same as building a dependable company knowledge base. The useful product is a controlled information system: it retrieves approved evidence, produces a bounded answer, shows its sources, and admits when the evidence is insufficient."
+      },
+      {
+        "type": "paragraph",
+        "text": "This guide answers a practical question: how can a small team build a reliable AI knowledge base with retrieval-augmented generation, commonly called RAG? It focuses on the decisions that matter after a demonstration works—document ownership, extraction, chunking, permissions, retrieval quality, citations, evaluation, maintenance, and safe failure. It does not depend on one cloud or model provider."
+      },
+      {
+        "type": "callout",
+        "title": "The reliability rule",
+        "text": "Treat the model as the final writer, not the source of truth. The approved documents, retrieval process, access rules, citations, and evaluation set determine whether the answer deserves trust."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "What RAG does"
+      },
+      {
+        "type": "paragraph",
+        "text": "RAG adds a retrieval step before generation. A system prepares company documents for search, receives a question, retrieves relevant passages, places those passages into the model's context, and asks the model to answer from that evidence. AWS describes the basic flow as document ingestion into a vector database, a natural-language query, similarity search for relevant context, and generation from the query plus that context.[2]"
+      },
+      {
+        "type": "paragraph",
+        "text": "A typical implementation converts chunks of text into embeddings: numerical representations that allow semantically related passages and questions to be matched. A vector index stores those representations alongside the original text and useful metadata. Vector search is only one option. Keyword search may perform better for product codes, exact policy names, error messages, and legal phrases, while a hybrid search can combine semantic and exact matching."
+      },
+      {
+        "type": "paragraph",
+        "text": "RAG is not a truth switch. If extraction drops a table, the relevant policy is missing, permissions are applied after retrieval, or the retriever selects a similar but incorrect passage, the model receives bad evidence. Microsoft separates production RAG into ingestion, inference, and evaluation phases and emphasizes preprocessing, chunking, update strategy, query handling, post-retrieval processing, and assessment.[1] Reliability must be designed across that complete path."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Start with one answerable use case"
+      },
+      {
+        "type": "paragraph",
+        "text": "Do not begin with “answer anything about the company.” Choose one audience, one document collection, and one class of question. A better first scope might be helping support staff find approved troubleshooting steps, helping employees navigate current HR procedures, or helping sales staff locate product facts. Write what the assistant may answer, what it must refuse, and who owns the underlying information."
+      },
+      {
+        "type": "list",
+        "style": "check",
+        "items": [
+          "The intended users and their access levels are known.",
+          "The source collection has a named business owner.",
+          "A correct answer can be traced to one or more approved passages.",
+          "Questions outside scope can be detected or safely declined.",
+          "Users have a manual route when the assistant cannot answer.",
+          "Errors are reviewable and do not trigger consequential actions automatically."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "The first version should be read-only. Let it retrieve and explain, but do not let it change customer records, approve requests, send messages, or interpret high-stakes rules as a final authority. If the collection includes legal, financial, medical, employment, privacy, or regulatory material, require qualified human review and make the limitation visible. This article is operational guidance, not professional advice."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Build a trustworthy document collection"
+      },
+      {
+        "type": "paragraph",
+        "text": "Create an inventory before choosing a vector database. For every source, record the owner, title, canonical location, document type, audience, confidentiality class, language, effective date, review date, and replacement relationship. Decide whether drafts, archived versions, duplicated exports, email attachments, and unofficial notes belong in the searchable collection. In most cases, excluding uncertain material improves reliability more than adding another retrieval technique."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Extract content instead of merely uploading files"
+      },
+      {
+        "type": "paragraph",
+        "text": "Inspect the text produced from PDFs, presentations, scans, web pages, and spreadsheets. Headers can repeat on every page; two-column layouts can merge in the wrong order; scanned pages may contain no text; and tables can lose the relationship between labels and values. Microsoft recommends standardizing formats, removing unrelated or old content, tracking versions, handling images and tables, and preserving metadata during preprocessing.[1] Test extraction on difficult documents rather than assuming successful upload means useful indexing."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Keep provenance with every chunk"
+      },
+      {
+        "type": "paragraph",
+        "text": "Each searchable passage should retain a stable document ID, title, source URL or internal path, section heading, page or location when available, version, effective date, language, owner, and access label. That metadata supports filtering, citations, updates, deletion, and investigation. Without it, a generated answer may look grounded while nobody can identify which policy version supplied the claim."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Choose chunking through tests"
+      },
+      {
+        "type": "paragraph",
+        "text": "Chunking divides large documents into units small enough to retrieve. There is no universally correct length. A chunk that is too small may omit a condition or exception; one that is too large may mix topics and consume context with irrelevant text. Prefer structural boundaries such as headings, paragraphs, procedures, and table sections, then compare alternatives against real questions. Microsoft specifically recommends testing chunk size, split method, overlap, and ways to reconnect a small match with its surrounding context.[1]"
+      },
+      {
+        "type": "paragraph",
+        "text": "Preserve meaning across boundaries. Keep a numbered procedure together when later steps depend on earlier ones. Attach the section title to a paragraph whose meaning otherwise becomes ambiguous. Store table headers with retrieved rows. If a short passage matches, consider returning its parent section as context. Overlap can protect information at boundaries, but excessive overlap creates duplicates that occupy several retrieval positions with nearly identical text."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Question pattern",
+          "Useful retrieval signal",
+          "Common failure"
+        ],
+        "rows": [
+          [
+            "Exact code, product, or policy name",
+            "Keyword plus metadata filtering",
+            "Semantic search overlooks the exact token"
+          ],
+          [
+            "Natural-language concept",
+            "Embedding or hybrid search",
+            "Keyword-only search misses paraphrases"
+          ],
+          [
+            "Multi-part comparison",
+            "Query decomposition and several passages",
+            "One retrieved chunk answers only half"
+          ],
+          [
+            "Current rule or price",
+            "Effective-date filter and current source",
+            "An archived version ranks highly"
+          ],
+          [
+            "Permission-sensitive question",
+            "Access filter applied during retrieval",
+            "Unauthorized content reaches the model"
+          ]
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Design retrieval before polishing prompts"
+      },
+      {
+        "type": "paragraph",
+        "text": "When an answer is wrong, inspect what the retriever returned before rewriting the generation prompt. If the required passage was absent, the model could not use it. Track retrieval separately from answer quality: did the system find the authoritative passage, rank it near the top, include required neighboring context, and exclude misleading material? Only then ask whether the model followed the evidence accurately."
+      },
+      {
+        "type": "paragraph",
+        "text": "Start with a simple baseline—perhaps hybrid search with metadata filters and a small number of results. Add query rewriting, reranking, or decomposition only when tests reveal a specific failure. Microsoft notes that irrelevant extra information can hide important details and recommends filtering and reranking retrieved content before generation.[1] Every added model call also affects latency, cost, observability, and failure modes."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Enforce access before context reaches the model"
+      },
+      {
+        "type": "paragraph",
+        "text": "Copy source-system permissions into searchable metadata or retrieve through a system that can enforce them at query time. Filter candidates for the signed-in user before passages enter the prompt, not after the answer is generated. AWS identifies fine-grained identity and access management as a critical production component.[2] Test with users who have different roles and confirm that citations, snippets, logs, cached responses, conversation history, and exports do not reveal restricted material."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Make answers cite and decline"
+      },
+      {
+        "type": "paragraph",
+        "text": "Prompt the model to answer only from retrieved evidence, cite each material claim, distinguish direct statements from reasonable synthesis, and say when the sources do not contain an answer. A citation should open the exact approved source or passage the system actually used. Do not generate a reference from the document title alone, and do not display a citation the user lacks permission to open."
+      },
+      {
+        "type": "paragraph",
+        "text": "Define refusal and uncertainty behavior in product language. Useful responses include “I could not find this in the approved knowledge base,” “the retrieved documents conflict,” and “this policy is marked expired; contact the owner.” A short, honest gap is safer and more useful than an uncited paragraph. Provide a search-results view or manual support route so a refusal does not become a dead end."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Evaluate the system with real questions"
+      },
+      {
+        "type": "paragraph",
+        "text": "Build a test set before launch. Include ordinary questions, paraphrases, abbreviations, spelling mistakes, multi-part requests, questions with no answer, conflicting documents, expired information, permission boundaries, and attempts to make the assistant ignore its rules. Store an approved answer or required evidence where possible, plus the expected behavior when the system should decline."
+      },
+      {
+        "type": "paragraph",
+        "text": "Google Cloud recommends a broad test dataset, golden reference answers, repeatable metrics, and changing one variable at a time between experiments.[3] It also separates retrieval accuracy from the context given to the model, which is useful for root-cause analysis.[3] Measure both stages rather than hiding them inside one subjective “good answer” score."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Retrieval recall: did at least one authoritative passage appear?",
+          "Retrieval precision: how much returned context was genuinely relevant?",
+          "Groundedness: is every material answer claim supported by retrieved text?",
+          "Answer completeness: were necessary conditions and exceptions included?",
+          "Citation correctness: does each citation support the attached claim and open correctly?",
+          "Access correctness: did retrieval respect the test user's permissions?",
+          "Abstention quality: did the system decline when evidence was missing or conflicting?",
+          "Operational performance: what were latency, cost, failures, and human-review effort?"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Automated scoring helps run regression tests, but include human reviewers who understand the documents and intended users. Google Cloud argues that qualitative testing remains necessary for tone, clarity, and ambiguity even after automated evaluation reaches a useful baseline.[3] Record failure categories, not just averages. One exposure of restricted content or one invented policy exception may outweigh many fluent answers."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "A practical implementation sequence"
+      },
+      {
+        "type": "steps",
+        "items": [
+          {
+            "title": "Define scope and owner",
+            "text": "Choose one user group, one collection, one question class, and one accountable business owner. Write explicit exclusions and escalation routes."
+          },
+          {
+            "title": "Inventory and clean sources",
+            "text": "Remove duplicates and expired material, classify access, identify canonical versions, and document review dates before indexing."
+          },
+          {
+            "title": "Validate extraction",
+            "text": "Inspect samples from every file type, including tables, scans, Arabic and English content where relevant, and difficult layouts."
+          },
+          {
+            "title": "Create a retrieval baseline",
+            "text": "Chunk by structure, preserve provenance, apply permission and date filters, and compare keyword, vector, or hybrid retrieval on the same questions."
+          },
+          {
+            "title": "Add bounded generation",
+            "text": "Require evidence-based answers, claim-level citations, clear uncertainty, and no action beyond the approved read-only scope."
+          },
+          {
+            "title": "Run regression and security tests",
+            "text": "Measure retrieval and generation separately, test unauthorized users, and include missing, conflicting, malicious, and out-of-scope inputs."
+          },
+          {
+            "title": "Pilot with a small group",
+            "text": "Show limitations, collect structured feedback, inspect failures, and keep the existing manual knowledge route available."
+          },
+          {
+            "title": "Operate the content lifecycle",
+            "text": "Assign update schedules, reindex changed documents, remove revoked sources, monitor drift, and rerun tests after material changes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Common mistakes"
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Indexing everything"
+      },
+      {
+        "type": "paragraph",
+        "text": "More content creates more conflicts, duplicates, access rules, and outdated passages. Begin with a governed collection that answers a bounded set of questions well."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Tuning the prompt before checking retrieval"
+      },
+      {
+        "type": "paragraph",
+        "text": "A model cannot faithfully quote a passage it never receives. Inspect retrieved chunks and fix extraction, metadata, filtering, chunking, or ranking before adding elaborate instructions."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Showing decorative citations"
+      },
+      {
+        "type": "paragraph",
+        "text": "A source list is not evidence if links do not support individual claims. Preserve passage-level provenance and test citation correctness as a first-class output."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Applying permissions after generation"
+      },
+      {
+        "type": "paragraph",
+        "text": "Removing restricted details from a finished answer is fragile because the model has already received them. Enforce authorization during retrieval and protect caches, logs, citations, and conversation memory as well."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Launching without an update owner"
+      },
+      {
+        "type": "paragraph",
+        "text": "A knowledge assistant degrades when policies change but the index does not. Connect publication, revision, expiry, and deletion events to reindexing, and make stale-source incidents visible."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Frequently asked questions"
+      },
+      {
+        "type": "faq",
+        "items": [
+          {
+            "question": "Does RAG stop AI hallucinations?",
+            "answer": "No. RAG can provide relevant evidence, but failures in documents, extraction, retrieval, permissions, context selection, prompting, or generation can still produce unsupported answers. Require citations, test groundedness, and make the system decline when evidence is insufficient."
+          },
+          {
+            "question": "Do I need a vector database for an AI knowledge base?",
+            "answer": "Not always. Exact keyword or database search can be better for codes, names, and structured facts. Many useful systems combine keyword, metadata, and vector retrieval. Choose from test results and data shape rather than architecture fashion."
+          },
+          {
+            "question": "What chunk size should a RAG system use?",
+            "answer": "There is no universal size. Start with natural document boundaries, preserve headings and table context, then compare sizes and overlap on a fixed set of real questions. Select the configuration that retrieves complete, relevant evidence consistently."
+          },
+          {
+            "question": "Should I fine-tune a model on company documents instead?",
+            "answer": "For answers that must reflect changing documents and expose sources, retrieval is usually the clearer first approach because content can be updated and cited without retraining. Fine-tuning may help behavior or specialized tasks, but it does not replace document governance, retrieval, or evaluation."
+          },
+          {
+            "question": "How often should the knowledge base be updated?",
+            "answer": "Match updates to the source lifecycle. Critical policy changes may require event-driven reindexing, while stable material may use a schedule. Track versions and effective dates, remove revoked content, and rerun relevant tests after important changes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Conclusion: reliability comes from the whole system"
+      },
+      {
+        "type": "paragraph",
+        "text": "A reliable AI knowledge base is not created by placing a chat interface over a document folder. It begins with a narrow use case and governed sources, then preserves structure, provenance, freshness, and permissions through retrieval. The model should answer from that evidence, cite it precisely, and stop when the evidence does not support a response."
+      },
+      {
+        "type": "paragraph",
+        "text": "Start with a simple retrieval baseline and a strong evaluation set. Measure whether the correct passage was found before judging the wording of the answer. Pilot read-only, study failures, keep a manual route, and assign an owner for updates. Advanced techniques are useful only when they solve a measured problem; disciplined content and testing are what turn RAG from a persuasive demonstration into dependable business infrastructure."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Build Advanced Retrieval-Augmented Generation Systems",
+        "publisher": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/azure/developer/ai/advanced-retrieval-augmented-generation"
+      },
+      {
+        "title": "Understanding Retrieval Augmented Generation",
+        "publisher": "AWS Prescriptive Guidance",
+        "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/retrieval-augmented-generation-options/what-is-rag.html"
+      },
+      {
+        "title": "Optimizing RAG Retrieval: Test, Tune, Succeed",
+        "publisher": "Google Cloud",
+        "url": "https://cloud.google.com/blog/products/ai-machine-learning/optimizing-rag-retrieval"
+      }
+    ]
+  },
+  {
     "title": "On-Device AI vs Cloud AI: A Practical Business Guide",
     "slug": "on-device-ai-vs-cloud-ai",
     "description": "Compare on-device AI and cloud AI for privacy, speed, capability, cost, hardware, and maintenance, with a practical framework for choosing or combining them.",
