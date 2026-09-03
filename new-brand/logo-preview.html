@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Novatech Logo Preview</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 48px; color: #07111f; background: #f6f9fc; font-family: Arial, sans-serif; }
+    h1 { margin-top: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+    .card { min-height: 240px; padding: 32px; display: grid; align-content: center; gap: 16px; background: white; border: 1px solid #dce4ec; border-radius: 20px; }
+    .card.dark { background: #07111f; border-color: #07111f; }
+    .card img { width: 100%; max-height: 180px; object-fit: contain; }
+    .card.mark img { width: 140px; margin: auto; }
+    .card span { color: #536070; font-size: 13px; }
+    .card.dark span { color: #aebbc9; }
+  </style>
+</head>
+<body>
+  <h1>Novatech Logo System</h1>
+  <div class="grid">
+    <div class="card"><img src="logos/novatech-horizontal-light.svg" alt="Novatech English logo for light backgrounds"><span>English / Light</span></div>
+    <div class="card dark"><img src="logos/novatech-horizontal-dark.svg" alt="Novatech English logo for dark backgrounds"><span>English / Dark</span></div>
+    <div class="card"><img src="logos/novatech-horizontal-ar-light.svg" alt="Novatech Arabic logo for light backgrounds"><span>Arabic / Light</span></div>
+    <div class="card dark"><img src="logos/novatech-horizontal-ar-dark.svg" alt="Novatech Arabic logo for dark backgrounds"><span>Arabic / Dark</span></div>
+    <div class="card mark"><img src="logos/novatech-mark.svg" alt="Standalone Novatech N mark"><span>Standalone Mark</span></div>
+    <div class="card dark mark"><img src="logos/novatech-social-avatar.svg" alt="Novatech social avatar"><span>Social Avatar</span></div>
+  </div>
+</body>
+</html>

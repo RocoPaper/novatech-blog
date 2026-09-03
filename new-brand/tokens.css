@@ -1,0 +1,74 @@
+:root {
+  /* Brand colors */
+  --brand-blue: #1478ff;
+  --brand-blue-hover: #0d68e8;
+  --brand-navy: #07111f;
+  --brand-teal: #22d3c5;
+  --brand-sky: #eaf3ff;
+  --brand-ice: #f6f9fc;
+  --brand-white: #ffffff;
+  --brand-slate: #536070;
+  --brand-muted: #84909d;
+  --brand-border: #dce4ec;
+
+  /* Semantic colors */
+  --color-success: #138a72;
+  --color-warning: #b86b00;
+  --color-error: #c9363e;
+  --color-info: #1769d2;
+
+  /* Typography */
+  --font-display-en: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body-en: "Manrope", "Segoe UI", sans-serif;
+  --font-display-ar: "Alexandria", "Tahoma", sans-serif;
+  --font-body-ar: "IBM Plex Sans Arabic", "Tahoma", sans-serif;
+
+  /* Layout */
+  --container-default: 1200px;
+  --container-wide: 1360px;
+  --container-reading: 720px;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 8px 24px rgba(7, 17, 31, 0.07);
+  --shadow-md: 0 18px 50px rgba(7, 17, 31, 0.1);
+  --shadow-lg: 0 30px 80px rgba(7, 17, 31, 0.14);
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-30: 120px;
+
+  /* Motion */
+  --duration-fast: 180ms;
+  --duration-default: 250ms;
+  --duration-reveal: 600ms;
+  --ease-standard: cubic-bezier(0.2, 0.65, 0.25, 1);
+}
+
+html[lang="ar"] {
+  --font-display: var(--font-display-ar);
+  --font-body: var(--font-body-ar);
+}
+
+html[lang="en"] {
+  --font-display: var(--font-display-en);
+  --font-body: var(--font-body-en);
+}
+

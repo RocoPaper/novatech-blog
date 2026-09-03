@@ -8,7 +8,7 @@
     "build": "node scripts/build.mjs",
     "validate": "node scripts/validate.mjs",
     "dev": "node scripts/server.mjs",
-    "check": "npm run validate && npm run build && npm run validate"
+    "check": "pnpm validate && pnpm build && pnpm validate"
   },
   "engines": { "node": ">=22" }
 }

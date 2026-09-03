@@ -1,1 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="#07111f"/><g stroke="#17314c" stroke-width="1"><path d="M0 90h1200M0 180h1200M0 270h1200M0 360h1200M0 450h1200M0 540h1200"/><path d="M100 0v630M200 0v630M300 0v630M400 0v630M500 0v630M600 0v630M700 0v630M800 0v630M900 0v630M1000 0v630M1100 0v630"/></g><circle cx="1030" cy="110" r="42" fill="#a8d72d"/><path d="M85 130h14v58H85zm0 84h14v286H85z" fill="#00cbe7"/><text x="140" y="260" fill="#69d2ff" font-family="Arial,Helvetica,sans-serif" font-size="104" font-weight="800">NOVATECH</text><text x="145" y="345" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="43">Practical AI and technology,</text><text x="145" y="402" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="43">without the hype.</text><text x="145" y="500" fill="#91a5b9" font-family="Arial,Helvetica,sans-serif" font-size="26">Guides for builders and businesses in Saudi Arabia</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Novatech</title>
+  <desc id="desc">Practical AI and technology, without the hype.</desc>
+  <rect width="1200" height="630" rx="36" fill="#F6F9FC"/>
+  <rect x="52" y="52" width="1096" height="526" rx="28" fill="#EAF3FF" stroke="#DCE4EC" stroke-width="2"/>
+  <g transform="translate(86 76) scale(.34)">
+    <g transform="rotate(-6 256 256)">
+      <rect x="64" y="64" width="384" height="384" rx="108" fill="#1478FF"/>
+      <path d="M176 344V168L336 344V168" fill="none" stroke="#FFFFFF" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <text x="290" y="175" fill="#07111F" font-family="Space Grotesk, Segoe UI, sans-serif" font-size="78" font-weight="700" letter-spacing="-3">Novatech</text>
+  <text x="294" y="222" fill="#536070" font-family="Manrope, Segoe UI, sans-serif" font-size="22" font-weight="600" letter-spacing="6">DIGITAL SOLUTIONS</text>
+  <text x="92" y="392" fill="#07111F" font-family="Space Grotesk, Segoe UI, sans-serif" font-size="58" font-weight="700" letter-spacing="-2">Practical AI and technology,</text>
+  <text x="92" y="462" fill="#07111F" font-family="Space Grotesk, Segoe UI, sans-serif" font-size="58" font-weight="700" letter-spacing="-2">without the hype.</text>
+  <rect x="92" y="520" width="252" height="8" rx="4" fill="#1478FF"/>
+  <rect x="352" y="520" width="74" height="8" rx="4" fill="#22D3C5"/>
+</svg>

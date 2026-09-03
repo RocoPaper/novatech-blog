@@ -7,13 +7,13 @@ A dependency-free static editorial site for practical AI and technology, written
 Requires Node.js 22 or newer.
 
 ```bash
-npm run check     # validate source, build, then verify generated SEO output
-npm run build     # generate dist/
-npm run validate  # validate source and, when present, generated output
-npm run dev       # serve dist/ at http://localhost:3000 (builds if missing)
+pnpm check     # validate source, build, then verify generated SEO output
+pnpm build     # generate dist/
+pnpm validate  # validate source and, when present, generated output
+pnpm dev       # serve dist/ at http://localhost:3000 (builds if missing)
 ```
 
-`PORT=4000 npm run dev` selects another port.
+In PowerShell, `$env:PORT=4000; pnpm dev` selects another port.
 
 ## Project structure
 
@@ -55,13 +55,13 @@ A daily cron or publishing job should:
 1. Read `config/site.json` and `content/posts.json`.
 2. Append one complete post object to the JSON array without changing existing slugs.
 3. Preserve source URLs and only make conservative, supportable claims.
-4. Run `npm run check`.
+4. Run `pnpm check`.
 5. Publish only if the command exits successfully.
 
 Use a temporary file plus an atomic rename when updating `posts.json`; never stream a partial JSON document into place. The generator sorts nothing implicitly, so place newest posts first if that is the desired listing order. Because pages contain complete article HTML, search crawlers and feed readers do not depend on client-side JavaScript.
 
 ## Deployment on Netlify
 
-Connect this repository to Netlify. `netlify.toml` specifies `npm run build`, publishes `dist`, requests Node 22, enables clean URLs, and applies security and cache headers. There is deliberately no SPA catch-all redirect. The production URL configured in `site.json` is `https://novatech-ar.netlify.app`; update it before deploying to another domain, then run `npm run check` again.
+Connect this repository to Netlify. `netlify.toml` specifies `pnpm build`, publishes `dist`, requests Node 22, enables clean URLs, and applies security and cache headers. There is deliberately no SPA catch-all redirect. The production URL configured in `site.json` is `https://novatech-ar.netlify.app`; update it before deploying to another domain, then run `pnpm check` again.
 
 The newsletter UI is intentionally disabled and labeled **Coming soon**. It does not submit data or claim a subscription succeeded.

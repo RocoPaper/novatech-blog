@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Novatech social avatar</title>
+  <desc id="desc">Blue Novatech N mark centered on a deep navy square.</desc>
+  <rect width="1080" height="1080" rx="220" fill="#07111F"/>
+  <g transform="translate(284 284)">
+    <g transform="rotate(-6 256 256)">
+      <rect x="64" y="64" width="384" height="384" rx="108" fill="#1478FF"/>
+      <path d="M176 344V168L336 344V168" fill="none" stroke="#FFFFFF" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+</svg>

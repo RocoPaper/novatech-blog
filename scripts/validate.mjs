@@ -40,7 +40,24 @@ for (const [index,post] of posts.entries()) {
 let hasDist = true;
 try { await stat(path.join(root,'dist')); } catch { hasDist = false; }
 if (hasDist) {
-  const required = ['index.html','blog/index.html','about/index.html','404.html','sitemap.xml','robots.txt','rss.xml','feed.json','static/styles.css','static/app.js','static/favicon.svg','static/social-card.svg'];
+  const required = [
+    'index.html',
+    'blog/index.html',
+    'about/index.html',
+    '404.html',
+    'sitemap.xml',
+    'robots.txt',
+    'rss.xml',
+    'feed.json',
+    'static/styles.css',
+    'static/app.js',
+    'static/favicon.svg',
+    'static/social-card.svg',
+    'static/brand/novatech-horizontal-light.svg',
+    'static/brand/novatech-horizontal-dark.svg',
+    'static/brand/novatech-mark.svg',
+    ...posts.map(post => `static/images/${post.slug}.jpg`)
+  ];
   for (const file of required) { try { await stat(path.join(root,'dist',file)); } catch { errors.push(`generated file missing: dist/${file}`); } }
   let sitemap=''; try { sitemap=await readFile(path.join(root,'dist/sitemap.xml'),'utf8'); } catch {}
   for (const post of posts) {
@@ -53,6 +70,11 @@ if (hasDist) {
     assert(html.includes('"@type":"BreadcrumbList"'),`${rel} missing BreadcrumbList schema`);
     assert(html.includes('<article>') && html.includes('<h1>') && html.includes('Sources and further reading'),`${rel} lacks crawlable article body`);
     assert(sitemap.includes(`${site.baseUrl}/blog/${post.slug}/`),`sitemap missing ${post.slug}`);
+  }
+  for (const file of ['index.html','blog/index.html','about/index.html','404.html']) {
+    let html=''; try { html=await readFile(path.join(root,'dist',file),'utf8'); } catch { continue; }
+    assert(!/[—–]/.test(html),`${file} contains a disallowed dash character`);
+    assert(html.includes('/static/brand/novatech-horizontal-light.svg'),`${file} is missing the new Novatech brand logo`);
   }
 }
 if (errors.length) { console.error(`Validation failed (${errors.length}):\n- ${errors.join('\n- ')}`); process.exit(1); }
